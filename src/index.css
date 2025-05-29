@@ -1,0 +1,88 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #1E1E1E;
+  --secondary: #000000;
+  --accent: #FFD700;
+  --success: #10B981;
+  --warning: #F59E0B;
+  --error: #EF4444;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  @apply bg-primary text-white;
+  margin: 0;
+  padding: 0;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-primary-light;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-accent rounded-full;
+}
+
+/* Custom Classes */
+@layer components {
+  .btn {
+    @apply px-4 py-2 rounded-lg font-medium transition-all duration-300 ease-in-out;
+  }
+  
+  .btn-primary {
+    @apply bg-accent text-secondary hover:bg-accent-light active:bg-accent-dark;
+  }
+  
+  .btn-secondary {
+    @apply bg-primary-light text-white hover:bg-primary active:bg-primary-dark;
+  }
+  
+  .btn-outline {
+    @apply border-2 border-accent text-accent hover:bg-accent hover:text-secondary;
+  }
+  
+  .btn-danger {
+    @apply bg-error text-white hover:bg-error-light active:bg-error-dark;
+  }
+  
+  .card {
+    @apply bg-primary-light rounded-lg shadow-lg p-4 transition-all duration-300;
+  }
+  
+  .input {
+    @apply bg-primary-light text-white border-2 border-gray-700 rounded-lg px-4 py-2 focus:outline-none focus:border-accent;
+  }
+  
+  .container-custom {
+    @apply container mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  .section {
+    @apply py-12 md:py-16;
+  }
+  
+  .title {
+    @apply text-2xl md:text-3xl font-bold mb-6;
+  }
+  
+  .subtitle {
+    @apply text-xl font-semibold mb-4;
+  }
+}
+
+/* Animation classes */
+.fade-in {
+  @apply animate-fadeIn;
+}
+
+.slide-in {
+  @apply animate-slideIn;
+}
